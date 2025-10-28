@@ -6,18 +6,6 @@ int main() {
 	cout << "[+] Переводчик" << endl << "[1] Русские слова" << endl << "[2] Английские слова" << endl << "[3] Выйти" << endl;
 	int a;
 	int b;
-	//road
-	//home
-	//sun
-	//moon
-	//winter
-	//autumn
-	//summer
-	//spring
-	//stone
-	//state
-	//province
-	//location
 	cout << "Выберите функцию: ";
 	cin >> a;
 	switch (a) {
