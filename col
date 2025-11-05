@@ -1,0 +1,104 @@
+#include <iostream>
+using namespace std;
+int main() {
+	setlocale(0, "");
+	cout << "[1] Линия " << endl << "[2] Квадрат" << endl;
+	int n;
+	int b;
+	int a;
+	int v;
+	int c;
+	int t = 0;
+	int h = 0;
+	int m = 0;
+	cout << "Выберите фигуру: ";
+	cin >> n;
+	switch (n) {
+	case 1: {
+		cout << "[1] Горизонтальная: " << endl << "[2] Вертикальная: " << endl;
+		cin >> b;
+		switch (b) {
+		case 1: {
+			cout << "Длина линии: ";
+			cin >> v;
+			cout << "Текстура линии: ";
+			cin >> c;
+			for (t; v; t++) {
+				cout << c << " ";
+				h += 1;
+				if (h == v) {
+					break;
+				}
+			}
+		}
+		case 2: {
+			cout << "Длина линии: ";
+			cin >> v;
+			cout << "Текстура линии: ";
+			cin >> c;
+			for (t; v; t++) {
+				cout << c << endl;
+				h += 1;
+				if (h == v) {
+					break;
+				}
+			}
+		}
+		}
+	}
+	case 2: {
+		cout << "[1] Заполненный " << endl << "[2] Пустой" << endl << "Выберите тип: ";
+		cin >> b;
+
+		switch (b) {
+		case 1: {
+			cout << "Размер: ";
+			cin >> a;
+			cout << "Текстура: ";
+			cin >> v;
+			for (c = 0; a; c++) {
+				cout << v << " ";
+				if (c == a-1) {
+					t += 1;
+					if (t == a) {
+						break;
+					}
+					cout << endl << v << " ";
+					c = 0;
+					
+				}
+			}
+		}
+		case 2: {
+			cout << "Размер: ";
+			cin >> a;
+			cout << "Текстура: ";
+			cin >> v;
+			for (c = 0; a; c++) {
+				if (t <= 0) {
+					cout << v << " ";
+				}
+				if (c == a - 1) {
+					t += 1;
+					if (t == a) {
+						break;
+					}
+					cout << endl << v << " ";
+					c = 0;
+					for(m; a; m++){
+						if (m != a) {
+							cout << " ";
+							m += 1;
+						}
+						else {
+							cout << v;
+							m = 1;
+						}
+					}
+					}
+			}
+		}
+		}
+	}
+	}
+}
