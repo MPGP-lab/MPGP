@@ -1,1 +1,1 @@
-Crazy Nordic man
+Just code from my college
