@@ -2,7 +2,7 @@
 #include <Windows.h>
 using namespace std;
 
-int n, m;
+int n, m, abc;
 bool Setting = true;
 
 struct Player {
@@ -10,9 +10,17 @@ struct Player {
     char figure;
     string color;
 };
-
+struct Static {
+    int win;
+    int loose;
+    int kvo;
+    int ochki;
+};
 Player player1 = { "Игрок1", 'X', "Красный" };
 Player player2 = { "Игрок2", 'O', "Синий" };
+
+Static player1S = { 0, 0, 0};
+Static player2S = { 0, 0, 0 };
 
 void cS() {
 #ifdef _WIN32
@@ -53,7 +61,6 @@ void Settings(Player& p) {
         else if (m == 2) p.color = "Синий";
         else if (m == 3) p.color = "Белый";
         break;
-
     default:
         Setting = false;
         break;
@@ -90,13 +97,21 @@ int main() {
             break;
 
         case 2:
-            cout << "Статистика пока не реализована\n";
+            cout << "+  |  Статистика \n\n";
+            cout << "                      W     L     D     |     Очки \n";
+            cout << "1  |  " << player1.name << "          " << player1S.win << "     " << player1S.loose << "     " << player1S.kvo << "     |     " << (player1S.win * 6) * (player1S.loose * 5) * (1,2 * player1S.kvo) << "\n";
+            cout << "2  |  " << player2.name << "          " << player2S.win << "     " << player2S.loose << "     " << player2S.kvo << "     |     " << (player2S.win * 6) * (player2S.loose * 5) * (1,2 * player2S.kvo) << "\n";
+            
+            cout << "0  |  Назад \n\n";
+            cout << ">  |  Ввод: ";
+            
+            cin >> abc;
+
             system("pause");
             cS();
             break;
-
         case 3:
-            cout << "+  |  Настройки\n\n"
+            cout <<"+  |  Настройки\n\n"
                 << "1  |  Игрок 1\n"
                 << "2  |  Игрок 2\n\n> ";
             cin >> n;
