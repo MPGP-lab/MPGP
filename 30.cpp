@@ -36,7 +36,7 @@ int console(string words, string color, int a) {
 
 
 int main() {
-	setlocale(0, "")
+	setlocale(0, "");
 	console("asdsa", "red", 0);
 	return 0;
 }
